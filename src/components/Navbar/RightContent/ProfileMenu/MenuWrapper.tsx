@@ -10,7 +10,7 @@ import {
   MenuList,
   Text,
 } from "@chakra-ui/react";
-// import { useAuthState } from "react-firebase-hooks/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useRecoilState } from "recoil";
 import { authModalState } from "../../../../atoms/authModalAtoms";
 import { auth } from "../../../../firebase/clientApp";
@@ -26,7 +26,7 @@ type MenuWrapperProps = {};
 
 const MenuWrapper: React.FC<MenuWrapperProps> = () => {
     const [authModal, setModalState] = useRecoilState(authModalState);
-    // const [user] = useAuthState(auth);
+    const [user] = useAuthState(auth);
     return (
       <Menu>
         <MenuButton
@@ -53,7 +53,7 @@ const MenuWrapper: React.FC<MenuWrapperProps> = () => {
                     mr={8}
                   >
                     <Text fontWeight={700}>
-                      {/* {user?.displayName || user?.email?.split("@")[0]} */}
+                      {user?.displayName || user?.email?.split("@")[0]}
                     </Text>
                     <Flex alignItems="center">
                       <Icon as={IoSparkles} color="brand.100" mr={1} />

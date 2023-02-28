@@ -1,16 +1,16 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
+import PageContentLayout from '@/components/Layout/PageContent'
 
 
 
 
 export default function Home() {
   return (
-    <>
+   <PageContentLayout>
+     <>
       <div>
-        Hello World
+      
       </div>
     </>
+   </PageContentLayout>
   )
 }

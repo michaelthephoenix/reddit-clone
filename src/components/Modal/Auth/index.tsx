@@ -8,12 +8,12 @@ import {
   ModalHeader,
   ModalOverlay,
 } from "@chakra-ui/react";
-// import { useAuthState } from "react-firebase-hooks/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { authModalState } from "../../../atoms/authModalAtoms";
-// import { userState } from "../../../atoms/userAtom";
+import { userState } from "../../../atoms/userAtom";
 import { auth } from "../../../firebase/clientApp";
-// import AuthInputs from "./Inputs";
+import AuthInputs from "./Inputs";
 // import OAuthButtons from "./OAuthButtons";
 // import ResetPassword from "./ResetPassword";
 import ModalWrapper from "../ModalWrapper";
@@ -28,8 +28,8 @@ const AuthModal: React.FC<AuthModalProps> = () => {
     open: false,
   }));
   
-  // const currentUser = useRecoilValue(userState);
-  // const [user, error] = useAuthState(auth);
+  const currentUser = useRecoilValue(userState);
+  const [user, error] = useAuthState(auth);
 
 
   const toggleView = (view: string) => {
@@ -39,9 +39,9 @@ const AuthModal: React.FC<AuthModalProps> = () => {
     });
   };
 
-  // useEffect(() => {
-  //   if (user) handleClose();
-  // },[user]);
+  useEffect(() => {
+    if (user) handleClose();
+  },[user]);
 
   return (
     <ModalWrapper isOpen={modalState.open} onClose={handleClose}>

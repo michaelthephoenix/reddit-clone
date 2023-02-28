@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import { useSetRecoilState } from "recoil";
 import { authModalState } from "../../../atoms/authModalAtoms";
 import AuthModal from "@/components/Modal/Auth";
-
+    
 type AuthButtonsProps = {};
 
 const AuthButtons: React.FC<AuthButtonsProps> = () => {
@@ -26,7 +26,7 @@ const AuthButtons: React.FC<AuthButtonsProps> = () => {
         mr={2}
         onClick={()=> setAuthModalState({open: true, view: "signup"})}
         >
-            Log In
+            Sign Up
         </Button>
         </>
     );

@@ -1,18 +1,20 @@
 import React from "react";
 import { Box, Flex, Image } from "@chakra-ui/react";
 import { User } from "firebase/auth";
-// import { useAuthState } from "react-firebase-hooks/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase/clientApp";
 // import Directory from "./Directory";
+import RightContent from "./RightContent";
+import { useSetRecoilState } from "recoil";
 
 const Navbar: React.FC = () => {
-  // const [user] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
   // const { onSelectMenuItem } = useDirectory();
 
   return (
     <Flex
-      bg={"white"}
+      bg="white"
       height="44px"
       padding={"6px 12px"}
       justifyContent={{ md: "space-between" }}
@@ -30,6 +32,7 @@ const Navbar: React.FC = () => {
           height={"46px"} alt="redditText"
         />
       </Flex>
+      <RightContent user={user as User}/>
     </Flex>
   );
 };

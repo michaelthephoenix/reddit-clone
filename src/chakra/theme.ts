@@ -1,6 +1,6 @@
 import { extendTheme } from "@chakra-ui/react";
 import { Button } from "./Button";
-// import { Input } from "@chakra-ui/react";
+// import { Input } from "./";
 
 export const theme = extendTheme({
     colors: {
@@ -19,6 +19,7 @@ export const theme = extendTheme({
         }),
     },
     components: {
-        Button
+        Button,
+        
     }
 })
