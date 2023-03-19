@@ -1,4 +1,6 @@
-import PageContentLayout from '@/components/Layout/PageContent'
+import PageContentLayout from '@/components/Layout/PageContent';
+import { useEffect } from 'react';
+
 
 
 

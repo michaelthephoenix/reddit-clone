@@ -5,6 +5,8 @@ import { auth } from "../../../firebase/clientApp";
 import InputItem from "@/components/Layout/InputItem";
 import { FIREBASE_ERRORS } from "../../../firebase/errors";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
  
 type SignUpProps ={
     toggleView: (view: ModalView) => void;
@@ -20,7 +22,7 @@ const SignUp: React.FC<SignUpProps> = ({toggleView}) => {
     const [formError, setFormError] = useState(""); 
 
     const [signInWithEmailAndPassword, _, loading, authError] =
-    useSignInWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth);
 
     const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -32,7 +34,7 @@ const SignUp: React.FC<SignUpProps> = ({toggleView}) => {
         if (form.password !== form.confirmPassword) {
           return setFormError("Passwords do not match");
         }
-    
+        // createUserWithEmailAndPassword(form.email, form.password);
     }
 
     const onChange = ({

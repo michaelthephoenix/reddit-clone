@@ -6,6 +6,7 @@ import { auth } from "../../firebase/clientApp";
 // import Directory from "./Directory";
 import RightContent from "./RightContent";
 import { useSetRecoilState } from "recoil";
+import SearchInput from "./SearchInput";
 
 const Navbar: React.FC = () => {
   const [user] = useAuthState(auth);
@@ -32,6 +33,7 @@ const Navbar: React.FC = () => {
           height={"46px"} alt="redditText"
         />
       </Flex>
+      <SearchInput user={user as User}/>
       <RightContent user={user as User}/>
     </Flex>
   );
