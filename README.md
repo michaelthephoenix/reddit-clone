@@ -37,10 +37,8 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+To learn
+-How to Intialize Firebase
 
-How to Intialize Firebase
-
-<!-- 
 Need to fix
-directoryMenuAtoms to directoryMenuAtom
- -->
+-DirectoryMenuAtoms to directoryMenuAtom
